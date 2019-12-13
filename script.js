@@ -2,14 +2,16 @@ const myForm = document.querySelector('form');
 const inputSearch = document.querySelector('input[name="searchInput"]');
 
 function ajaxCallAsynch(){
-    console.dir(myForm);
-    console.log(myForm);
+    // console.dir(myForm);
+    // console.log(myForm);
     if (inputSearch.value.length === 0){
-        // alert('Please enter something before El Goog-ing it');
+        //manu trouve que c'est mieux de faire inputSearch.value.length !== 0 et de mettre l'ajax en premier
+        // et l'action d'erreur dans le else plus loin? (il me semble)
+        console.log('Please enter something before El Goog-ing it');
         var resultDiv = document.querySelector('#search-result');
         resultDiv.innerHTML = "";
         return;
-        console.log('Please enter something before El Goog-ing it');
+        
     }
     else{
         var formData = new FormData(myForm);
