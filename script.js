@@ -6,7 +6,9 @@ function ajaxCallAsynch(){
     console.log(myForm);
     if (inputSearch.value.length === 0){
         // alert('Please enter something before El Goog-ing it');
-        // return;
+        var resultDiv = document.querySelector('#search-result');
+        resultDiv.innerHTML = "";
+        return;
         console.log('Please enter something before El Goog-ing it');
     }
     else{
