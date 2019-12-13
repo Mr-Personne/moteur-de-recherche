@@ -20,14 +20,21 @@ function ajaxCallAsynch(){
         fetch('traitement.php', paramAjax).then(function(response){
 
             console.dir(response);
-            return response.text();
+            return response.json();
 
         }).then(function(data){
 
+            console.log("data : ", data);
+            var html = "";
             var resultDiv = document.querySelector('#search-result');
-            resultDiv.innerHTML = data;
+
+            for(var i = 0; i < data.length; i++){
+                html += "<p>" + data[i][1] +" "+ data[i][2] + "</p>";
+            }
+
+            resultDiv.innerHTML = html;
         });
-        console.log("lol");
+        
     }
 };
 
