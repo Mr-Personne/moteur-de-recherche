@@ -5,7 +5,7 @@
     try{
         $db = new PDO('mysql:host=localhost;dbname=contacts;charset=utf8', 'root', '1234');
 
-        $answer = $db->query('SELECT * FROM contact WHERE first_name LIKE "'$search'%" OR first_name LIKE "%'$search'" OR first_name LIKE "%'$search'%"');
+        $answer = $db->query('SELECT * FROM contact WHERE first_name LIKE "'.$search.'%" OR first_name LIKE "%'.$search.'" OR first_name LIKE "%'.$search.'%"');
         $data = $answer->fetch();
 
         while($data){
