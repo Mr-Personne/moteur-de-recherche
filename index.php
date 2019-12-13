@@ -37,6 +37,7 @@
         <input type="text" name="searchInput">
         <button type="submit" id="submit"><span>&#161;</span>El gooG it!</button>
     </form>
+    <div id="search-result"> </div>
 
     <script src="script.js"></script>
 </body>
