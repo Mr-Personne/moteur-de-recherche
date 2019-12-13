@@ -33,6 +33,7 @@
 </head>
 <body>
     <h1><span>&#161;</span>Hola! El gooG!</h1>
+    <h2>A totaly original search engine</h2>
     <form action="#">
         <input type="text" name="searchInput">
         <button type="submit" id="submit"><span>&#161;</span>El gooG it!</button>
