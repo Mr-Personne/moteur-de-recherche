@@ -1,16 +1,18 @@
 <?php
+    print_r($_POST);
+
     try{
         $db = new PDO('mysql:host=localhost;dbname=contacts;charset=utf8', 'root', '1234');
 
-        $answer = $db->query('SELECT * FROM contact WHERE first_name LIKE "A%" OR first_name LIKE "%A" OR first_name LIKE "%A%"');
-        $data = $answer->fetch();
+        // $answer = $db->query('SELECT * FROM contact WHERE first_name LIKE "A%" OR first_name LIKE "%A" OR first_name LIKE "%A%"');
+        // $data = $answer->fetch();
 
-        while($data){
-            echo '<p>'.$data['first_name'].' est de '.$data['country_code'].'</p>';
-            $data = $answer->fetch();
-        }
+        // while($data){
+        //     echo '<p>'.$data['first_name'].' est de '.$data['country_code'].'</p>';
+        //     $data = $answer->fetch();
+        // }
 
-        $answer->closeCursor();
+        // $answer->closeCursor();
 
 
     } catch (Exception $e) {
