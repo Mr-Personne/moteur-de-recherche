@@ -5,8 +5,9 @@ function ajaxCallAsynch(){
     console.dir(myForm);
     console.log(myForm);
     if (inputSearch.value.length === 0){
-        alert('Please enter something before El Goog-ing it');
-        return;
+        // alert('Please enter something before El Goog-ing it');
+        // return;
+        console.log('Please enter something before El Goog-ing it');
     }
     else{
         var formData = new FormData(myForm);
@@ -39,5 +40,6 @@ myForm.addEventListener("submit", function(event){
 });
 
 inputSearch.addEventListener("keyup", function(event){
+    ajaxCallAsynch();
     console.log(event.target.value);
 });
