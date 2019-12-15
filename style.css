@@ -1,0 +1,4 @@
+#search-result p:hover{
+    background-color: rgb(231, 202, 155);
+    cursor: pointer;
+}
