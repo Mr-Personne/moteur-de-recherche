@@ -32,13 +32,26 @@
     <link href= style.css rel= stylesheet>
 </head>
 <body>
-    <h1><span>&#161;</span>Hola! El gooG!</h1>
-    <h2>A totaly original search engine</h2>
-    <form action="#">
-        <input type="text" name="searchInput">
-        <button type="submit" id="submit"><span>&#161;</span>El gooG it!</button>
-    </form>
-    <div id="search-result"> </div>
+    <div class="container-fluid mt-200px">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                <h1><span>&#161;</span>Hola! El gooG!</h1>
+                <h2>A totaly original search engine</h2>
+                <form action="#">
+                    <input type="text" name="searchInput" autocomplet="off">
+                    <!-- <button type="submit" id="submit"><span>&#161;</span>El gooG it!</button> -->
+                    <div class="magnifying-glass"></div>
+                </form>
+
+                <div id="search-result"> </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
