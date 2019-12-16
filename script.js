@@ -48,6 +48,12 @@ function ajaxCallAsynch() {
             var html = "<div class='container-fluid'><div class='container'><div class='row'><div class='col'>";
             var resultDiv = document.querySelector('#search-result');
 
+            if(data.length < 10){
+                var length = data.length;
+            }else{
+                var length = 10;
+            }
+
             for (var i = 0; i < data.length; i++) {
                 html += "<p>" + data[i][1] + " " + data[i][2] + "</p>";
             }
