@@ -20,7 +20,7 @@
         // $answer->closeCursor();
 
         //------méthode plus sécurisé contre injection SQL------
-        $answer = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchStart OR first_name LIKE :searchMid OR first_name LIKE :searchEnd');
+        $answer = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchStart OR first_name LIKE :searchMid OR first_name LIKE :searchEnd LIMIT 10');
 
         //cette partie permet de faire fonctionner la recherche sql 'LIKE'
         $searchStart = $search."%";
