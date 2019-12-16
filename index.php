@@ -30,6 +30,9 @@
     <title>Document</title>
 
     <link href= style.css rel= stylesheet>
+    <link href='https://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Caesar+Dressing' rel='stylesheet' type='text/css'>
+    <!-- source : https://codepen.io/atnyman/pen/cgGuL -->
 </head>
 <body>
     <div class="container-fluid mt-200px">
@@ -37,9 +40,11 @@
             <div class="row">
                 <div class="col">
 
-                <h1><span>&#161;</span>Hola! El gooG!</h1>
+                <!-- <h1><span>&#161;</span>Hola! <span id='font'>El gooG!</span></h1> -->
+                <h1><span>&#161;</span>Hola! <span class="fire">E</span><span class="burn">l</span> <span class="burn">g</span><span class="fire">o</span><span class="burn">o</span>
+                <span class="fire">G</span><span class="burn">!</span></h1>
                 <h2>A totaly original search engine</h2>
-                <form action="#">
+                <form action="#" class="form-flex">
                     <input type="text" name="searchInput" autocomplet="off">
                     <!-- <button type="submit" id="submit"><span>&#161;</span>El gooG it!</button> -->
                     <div class="magnifying-glass"></div>
