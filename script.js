@@ -44,7 +44,7 @@ function ajaxCallAsynch() {
 
         }).then(function (data) {
 
-            // console.log("data : ", data);
+            console.log("data : ", data);
             var html = "<div class='container-fluid'><div class='container'><div class='row'><div class='col'>";
             var resultDiv = document.querySelector('#search-result');
 
@@ -54,7 +54,7 @@ function ajaxCallAsynch() {
                 var length = 10;
             }
 
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < length; i++) {
                 html += "<p>" + data[i][1] + " " + data[i][2] + "</p>";
             }
 
