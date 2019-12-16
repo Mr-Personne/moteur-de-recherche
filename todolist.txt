@@ -1,0 +1,2 @@
+- change traitement.php pdo link (change localhost) so that : 
+- i can put it online on promo vesoul
