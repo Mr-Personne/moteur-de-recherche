@@ -20,18 +20,46 @@
         // $answer->closeCursor();
 
         //------méthode plus sécurisé contre injection SQL------
-        $answer = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchStart OR first_name LIKE :searchMid OR first_name LIKE :searchEnd LIMIT 10');
+        // $answer = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchStart OR first_name LIKE :searchMid OR first_name LIKE :searchEnd  ORDER BY `contact`.`first_name` ASC LIMIT 10');
+
+        // //cette partie permet de faire fonctionner la recherche sql 'LIKE'
+        // $searchStart = $search."%";
+        // $searchMid = "%".$search."%";
+        // $searchEnd = "%".$search;
+        // $answer->bindParam(':searchStart', $searchStart, PDO::PARAM_STR);
+        // $answer->bindParam(':searchMid', $searchMid, PDO::PARAM_STR);
+        // $answer->bindParam(':searchEnd', $searchEnd, PDO::PARAM_STR);
+
+        // $answer->execute();
+        // $allData = $answer->fetchAll();
+        // // var_dump(count($allData));
+        // echo json_encode($allData);
+        // // print_r($allData);
+
+
+        //------méthode ORDRE A% ; %A%; %A, plus sécurisé contre injection SQL------
+        $answer1 = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchStart ORDER BY `contact`.`first_name` ASC');
+
+        $answer2 = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchMid ORDER BY `contact`.`first_name` ASC');
+
+        $answer3 = $db->prepare('SELECT * FROM contact WHERE first_name LIKE :searchEnd  ORDER BY `contact`.`first_name` ASC');
 
         //cette partie permet de faire fonctionner la recherche sql 'LIKE'
         $searchStart = $search."%";
         $searchMid = "%".$search."%";
         $searchEnd = "%".$search;
-        $answer->bindParam(':searchStart', $searchStart, PDO::PARAM_STR);
-        $answer->bindParam(':searchMid', $searchMid, PDO::PARAM_STR);
-        $answer->bindParam(':searchEnd', $searchEnd, PDO::PARAM_STR);
+        $answer1->bindParam(':searchStart', $searchStart, PDO::PARAM_STR);
+        $answer2->bindParam(':searchMid', $searchMid, PDO::PARAM_STR);
+        $answer3->bindParam(':searchEnd', $searchEnd, PDO::PARAM_STR);
 
-        $answer->execute();
-        $allData = $answer->fetchAll();
+        $answer1->execute();
+        $answer2->execute();
+        $answer3->execute();
+        $allData1 = $answer1->fetchAll();
+        $allData2 = $answer2->fetchAll();
+        $allData3 = $answer3->fetchAll();
+        $allData = array_merge($allData1,$allData2,$allData3);
+        // var_dump(count($allData));
         echo json_encode($allData);
         // print_r($allData);
 
