@@ -1,2 +1,4 @@
 - change traitement.php pdo link (change localhost) so that : 
-- i can put it online on promo vesoul
+- i can put it online on promo vesoul0
+- add isset on line 3 for $search = $_POST['searchInput'];
+- add 'NOT LIKE "%a%" OR NOT LIKE "%a"' to sql queries
